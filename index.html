@@ -1,55 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Your Name</h1>
-      <p>Developer • Open Source • Tech Enthusiast</p>
-    </div>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+  <!-- Header -->
+  <header class="text-center py-10">
+    <img src="assets/avatar.png" alt="Avatar" class="w-28 h-28 rounded-full mx-auto mb-4" />
+    <h1 class="text-3xl font-bold">Your Name</h1>
+    <p class="text-gray-600 dark:text-gray-400">Full Stack Dev • Bot Maker • OSS Contributor</p>
+    <button id="themeToggle" class="mt-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">Toggle Dark Mode</button>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <img src="assets/avatar.png" alt="Avatar" class="avatar" />
-      <h2>About Me</h2>
-      <p>I’m a developer building tools, bots, and full-stack apps. Passionate about clean code, automation, and APIs.</p>
-    </div>
+  <!-- About -->
+  <section class="max-w-3xl mx-auto px-4" id="about" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-2">About Me</h2>
+    <p>I build tools, bots, and full-stack apps. Passionate about clean code, automation, and developer experience.</p>
   </section>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>🔗 <a href="https://github.com/yourname/project1" target="_blank">Project One</a></h3>
-        <p>Brief description of what it does. Tech used, maybe a cool feature.</p>
+  <!-- Projects -->
+  <section class="max-w-5xl mx-auto mt-10 px-4" id="projects" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+
+    <!-- Filter Buttons -->
+    <div class="flex gap-4 mb-4">
+      <button class="filter-btn px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded" data-filter="all">All</button>
+      <button class="filter-btn px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded" data-filter="web">Web</button>
+      <button class="filter-btn px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded" data-filter="bot">Bots</button>
+      <button class="filter-btn px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded" data-filter="api">APIs</button>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="projectGrid">
+      <div class="project-card" data-category="web">
+        <img src="assets/project1.png" alt="Project 1" class="rounded mb-2">
+        <h3 class="font-bold text-lg">Portfolio Site</h3>
+        <p>Responsive portfolio using Tailwind & JS.</p>
       </div>
-      <div class="project">
-        <h3>🔗 <a href="https://github.com/yourname/project2" target="_blank">Project Two</a></h3>
-        <p>Another small blurb here. Keep it concise.</p>
+
+      <div class="project-card" data-category="bot">
+        <img src="assets/project2.png" alt="Project 2" class="rounded mb-2">
+        <h3 class="font-bold text-lg">Telegram Bot</h3>
+        <p>Pyrogram bot for automation & checks.</p>
+      </div>
+
+      <div class="project-card" data-category="api">
+        <img src="assets/project3.png" alt="Project 3" class="rounded mb-2">
+        <h3 class="font-bold text-lg">CC Checker API</h3>
+        <p>Flask API with Stripe & error handling.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Reach me at: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Or connect on <a href="https://github.com/yourname" target="_blank">GitHub</a></p>
-    </div>
+  <!-- Contact -->
+  <section class="max-w-3xl mx-auto mt-10 px-4" id="contact" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-2">Contact</h2>
+    <p>Email: <a href="mailto:you@example.com" class="underline">you@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" class="underline">github.com/yourusername</a></p>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Your Name. Built with HTML/CSS/JS.</p>
-    </div>
+  <!-- Footer -->
+  <footer class="text-center mt-10 text-sm text-gray-500 pb-6">
+    &copy; 2025 Your Name. Built with ❤️ + Tailwind
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
